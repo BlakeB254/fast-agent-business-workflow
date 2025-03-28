@@ -14,6 +14,7 @@ from workflows.onboarding import onboarding_workflow
 from workflows.document_management import document_workflow
 from workflows.ui_management import ui_workflow
 from workflows.calendar_management import calendar_workflow
+from workflows.marketing_management import marketing_router
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, 
@@ -96,6 +97,17 @@ async def manage_calendar(action: str, data: dict):
             return {"result": result}
     except Exception as e:
         logger.error(f"Error in calendar workflow: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/marketing/{action}")
+async def manage_marketing(action: str, data: dict):
+    """Run marketing management workflows"""
+    try:
+        async with fast.run() as agent:
+            result = await agent.marketing_router(f"{action}: {data}")
+            return {"result": result}
+    except Exception as e:
+        logger.error(f"Error in marketing workflow: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # Download API endpoints
