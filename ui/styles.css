@@ -203,6 +203,22 @@ button.view-button:hover {
     background-color: #1a252f;
 }
 
+button.edit-button {
+    background-color: var(--warning-color);
+}
+
+button.edit-button:hover {
+    background-color: #e67e22;
+}
+
+button.contact-button {
+    background-color: var(--primary-color);
+}
+
+button.contact-button:hover {
+    background-color: #2980b9;
+}
+
 /* Footer styles */
 footer {
     background-color: var(--secondary-color);
@@ -682,6 +698,535 @@ footer {
 
 .tree-item-children {
     margin-top: 0.5rem;
+}
+
+/* Marketing Management styles */
+.marketing-management {
+    padding: 1rem 0;
+}
+
+.marketing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.marketing-tabs {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.marketing-tabs button {
+    padding: 0.75rem 1.25rem;
+    background: none;
+    color: var(--text-color);
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.marketing-tabs button:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--primary-color);
+}
+
+.marketing-tabs button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.marketing-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header h3 {
+    margin: 0;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Social Media Tab */
+.platform-selector {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+}
+
+.platform-selector button {
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.platform-selector button:hover {
+    background-color: #e9ecef;
+}
+
+.platform-selector button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.rules-and-templates {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .rules-and-templates {
+        grid-template-columns: 1fr;
+    }
+}
+
+.platform-rules, .platform-templates {
+    margin-bottom: 1.5rem;
+}
+
+.platform-rules h4, .platform-templates h4 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.rule-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.rule-item {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rule-item:last-child {
+    margin-bottom: 0;
+}
+
+.rule-item strong {
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+}
+
+.templates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.template-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.template-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.template-header h5 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.template-body {
+    padding: 1rem;
+}
+
+.template-body p {
+    margin-bottom: 0.5rem;
+}
+
+.template-body pre {
+    background-color: #f1f3f5;
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin: 0.5rem 0 1rem;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* Campaign styles */
+.campaigns-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.campaign-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.campaign-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.campaign-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.campaign-details {
+    padding: 1.5rem;
+}
+
+.detail-group {
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item strong {
+    flex: 1;
+    min-width: 120px;
+    color: var(--secondary-color);
+}
+
+.detail-item span {
+    flex: 2;
+    text-align: right;
+}
+
+.metrics-group h5, .audience-group h5, .creatives-group h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.metric-item {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--dark-color);
+}
+
+.creatives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.creative-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.creative-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.creative-type {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.creative-name {
+    font-weight: 500;
+}
+
+.creative-performance {
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+.campaign-actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.status.active {
+    background-color: #d4edda;
+    color: var(--success-color);
+}
+
+.status.planned {
+    background-color: #fff3cd;
+    color: var(--warning-color);
+}
+
+.status.completed {
+    background-color: #e2e3e5;
+    color: #495057;
+}
+
+.status.potential {
+    background-color: #cce5ff;
+    color: #0d6efd;
+}
+
+/* Content Creator styles */
+.creators-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.creator-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.creator-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creator-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.creator-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.creator-identity h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.creator-handle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.creator-details {
+    padding: 1.5rem;
+}
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.creator-metric {
+    text-align: center;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.creator-metric .metric-value {
+    font-size: 1rem;
+}
+
+.demographics-group h5, 
+.campaigns-group h5, 
+.notes-group h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.demographics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.demographic-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.demographic-item strong {
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+}
+
+.past-campaigns-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.past-campaign-item {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.campaign-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.campaign-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.no-campaigns {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+    font-style: italic;
+    color: var(--dark-color);
+}
+
+.notes-group p {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-style: italic;
+}
+
+.creator-actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.analytics-placeholder {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.analytics-placeholder h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.analytics-placeholder p {
+    color: var(--dark-color);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Utility classes */
