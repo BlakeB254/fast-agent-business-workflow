@@ -5,3 +5,4 @@ from workflows.onboarding import *
 from workflows.document_management import *
 from workflows.ui_management import *
 from workflows.calendar_management import *
+from workflows.marketing_management import *
