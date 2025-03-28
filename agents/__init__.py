@@ -5,3 +5,4 @@ from agents.ui_agents import *
 from agents.document_agents import *
 from agents.business_agents import *
 from agents.calendar_agents import *
+from agents.marketing_agents import *
