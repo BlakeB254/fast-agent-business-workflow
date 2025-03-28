@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
+    "./ui/**/*.{html,ts,tsx,js,jsx}",
+    "./src/**/*.{html,ts,tsx,js,jsx}",
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -25,12 +26,12 @@ export default {
         success: {
           DEFAULT: '#2ecc71',
           dark: '#27ae60',
-          light: '#58d68d',
+          light: '#5edc9e',
         },
         warning: {
           DEFAULT: '#f39c12',
           dark: '#e67e22',
-          light: '#f5b041',
+          light: '#f6b93b',
         },
         danger: {
           DEFAULT: '#e74c3c',
@@ -39,23 +40,12 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Segoe UI"', 'Roboto', 'Arial', 'sans-serif'],
+        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
       },
       boxShadow: {
-        card: '0 2px 5px rgba(0, 0, 0, 0.1)',
-        elevated: '0 5px 15px rgba(0, 0, 0, 0.1)',
-      },
-      borderRadius: {
-        card: '8px',
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
+        DEFAULT: '0 2px 5px rgba(0, 0, 0, 0.1)',
+        md: '0 4px 8px rgba(0, 0, 0, 0.12)',
+        lg: '0 10px 15px rgba(0, 0, 0, 0.15)',
       },
     },
   },
