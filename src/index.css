@@ -10,7 +10,7 @@
     @apply text-3xl font-bold mb-2;
   }
   h2 {
-    @apply text-2xl font-semibold mb-4 pb-2 border-b-2 border-primary;
+    @apply text-2xl font-semibold mb-4;
   }
   h3 {
     @apply text-xl font-semibold mb-3;
@@ -26,31 +26,31 @@
   }
   
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-dark focus:ring-primary;
+    @apply btn bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500;
   }
   
   .btn-secondary {
-    @apply btn bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary;
+    @apply btn bg-gray-800 text-white hover:bg-gray-700 focus:ring-gray-800;
   }
   
   .btn-success {
-    @apply btn bg-success text-white hover:bg-success-dark focus:ring-success;
+    @apply btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-500;
   }
   
   .btn-warning {
-    @apply btn bg-warning text-white hover:bg-warning-dark focus:ring-warning;
+    @apply btn bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-500;
   }
   
   .btn-danger {
-    @apply btn bg-danger text-white hover:bg-danger-dark focus:ring-danger;
+    @apply btn bg-red-500 text-white hover:bg-red-600 focus:ring-red-500;
   }
 
   .card {
-    @apply bg-white rounded-card shadow-card p-4 transition-all duration-200;
+    @apply bg-white rounded-lg shadow-sm p-4 transition-all duration-200;
   }
   
   .card-hover {
-    @apply hover:transform hover:-translate-y-1 hover:shadow-elevated;
+    @apply hover:transform hover:-translate-y-1 hover:shadow-md;
   }
 
   .form-group {
@@ -58,23 +58,11 @@
   }
   
   .form-label {
-    @apply block mb-1 font-medium text-secondary;
+    @apply block mb-1 font-medium text-gray-700;
   }
   
   .form-input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
-  }
-
-  .nav-link {
-    @apply text-white hover:text-primary-light relative px-1;
-  }
-  
-  .nav-link.active {
-    @apply text-primary-light;
-  }
-  
-  .nav-link.active::after {
-    @apply content-[''] absolute w-full h-0.5 bg-primary-light bottom-0 left-0;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
   }
 
   .status-badge {
