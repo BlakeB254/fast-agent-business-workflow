@@ -8,6 +8,8 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="app">
@@ -15,10 +17,11 @@
             <h1>Business Workflow System</h1>
             <nav>
                 <ul>
-                    <li><a href="#onboarding">Onboarding</a></li>
-                    <li><a href="#documents">Documents</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#technical">Technical</a></li>
+                    <li><a href="#onboarding" class="nav-link" data-section="onboarding"><i class="fas fa-rocket"></i> Onboarding</a></li>
+                    <li><a href="#documents" class="nav-link" data-section="documents"><i class="fas fa-file-alt"></i> Documents</a></li>
+                    <li><a href="#marketing" class="nav-link" data-section="marketing"><i class="fas fa-bullhorn"></i> Marketing</a></li>
+                    <li><a href="#calendar" class="nav-link" data-section="calendar"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#technical" class="nav-link" data-section="technical"><i class="fas fa-code"></i> Technical</a></li>
                 </ul>
             </nav>
         </header>
@@ -32,6 +35,11 @@
             <section id="documents">
                 <h2>Business Documents</h2>
                 <div id="document-management"></div>
+            </section>
+            
+            <section id="marketing">
+                <h2>Marketing & Advertising</h2>
+                <div id="marketing-management"></div>
             </section>
             
             <section id="calendar">
@@ -53,8 +61,36 @@
     <!-- React Components -->
     <script type="text/babel" src="components/OnboardingForm.jsx"></script>
     <script type="text/babel" src="components/DocumentManagement.jsx"></script>
+    <script type="text/babel" src="components/MarketingManagement.jsx"></script>
     <script type="text/babel" src="components/CalendarView.jsx"></script>
     <script type="text/babel" src="components/TechnicalView.jsx"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel">
+        // Navigation script
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show selected section
+                    const targetSection = link.getAttribute('data-section');
+                    document.getElementById(targetSection).classList.add('active');
+                    
+                    // Highlight active link
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    link.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
