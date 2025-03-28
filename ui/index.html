@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Workflow System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Business Workflow System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#onboarding">Onboarding</a></li>
+                    <li><a href="#documents">Documents</a></li>
+                    <li><a href="#calendar">Calendar</a></li>
+                    <li><a href="#technical">Technical</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="onboarding" class="active">
+                <h2>Business Onboarding</h2>
+                <div id="onboarding-form"></div>
+            </section>
+            
+            <section id="documents">
+                <h2>Business Documents</h2>
+                <div id="document-management"></div>
+            </section>
+            
+            <section id="calendar">
+                <h2>Calendar & Tasks</h2>
+                <div id="calendar-view"></div>
+            </section>
+            
+            <section id="technical">
+                <h2>Technical Breakdown</h2>
+                <div id="technical-view"></div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Business Workflow System</p>
+        </footer>
+    </div>
+
+    <!-- React Components -->
+    <script type="text/babel" src="components/OnboardingForm.jsx"></script>
+    <script type="text/babel" src="components/DocumentManagement.jsx"></script>
+    <script type="text/babel" src="components/CalendarView.jsx"></script>
+    <script type="text/babel" src="components/TechnicalView.jsx"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
