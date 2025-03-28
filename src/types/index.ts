@@ -1,17 +1,15 @@
-// Business data types
-export interface BusinessData {
-  companyName: string;
+// Business project types
+export interface BusinessProject {
+  id: string;
+  name: string;
   industry: string;
-  businessPlan: string;
-  website: string;
-  contactEmail: string;
-  contactPhone: string;
-  logoUploaded: boolean;
+  description: string;
+  logo?: string;
+  createdAt: string;
+  updatedAt: string;
+  status: 'active' | 'archived' | 'draft';
   colorScheme: ColorScheme;
-  fieldStatus?: Record<string, FieldStatus>;
 }
-
-export type FieldStatus = 'in_progress' | 'finalized';
 
 export interface ColorScheme {
   primary: string;
@@ -19,68 +17,56 @@ export interface ColorScheme {
   accent: string;
 }
 
-// Document types
+// Document related types
 export interface Document {
+  id: string;
+  projectId: string;
   filename: string;
-  document_type: string;
-  download_path: string;
-  metadata?: DocumentMetadata;
+  documentType: string;
+  downloadPath: string;
+  content?: string;
+  createdAt: string;
+  updatedAt: string;
+  status: 'draft' | 'review' | 'final';
+  metadata?: Record<string, any>;
 }
 
-export interface DocumentMetadata {
-  created_at: string;
-  status: DocumentStatus;
-  created_by?: string;
-  last_modified_at?: string;
-  last_modified_by?: string;
-  local_path?: string;
-}
-
-export type DocumentStatus = 'draft' | 'review' | 'final';
-
-// Marketing types
-export interface SocialMediaRule {
-  posting_frequency: string;
-  best_times: string;
-  hashtag_limit: string;
-  content_types: string;
-  image_specs: string;
+// Marketing related types
+export interface SocialMediaRules {
+  platform: string;
+  postingFrequency: string;
+  bestTimes: string;
+  hashtagLimit: string;
+  contentTypes: string;
+  imageSpecs: string;
   tone: string;
 }
 
 export interface SocialMediaTemplate {
   id: string;
+  projectId: string;
+  platform: string;
   name: string;
   description: string;
   structure: string;
   example: string;
-  image_specs: string;
+  imageSpecs: string;
 }
 
 export interface Campaign {
   id: string;
+  projectId: string;
   name: string;
-  status: CampaignStatus;
-  start_date: string;
-  end_date: string;
+  status: 'planned' | 'active' | 'completed';
+  startDate: string;
+  endDate: string;
   budget: number;
   spent: number;
   platforms: string[];
   metrics: CampaignMetrics;
-  audience?: {
-    demographics: string;
-    interests: string;
-    locations: string;
-  };
-  creatives?: Array<{
-    type: string;
-    name: string;
-    performance: string;
-    download_path: string;
-  }>;
+  audience: CampaignAudience;
+  creatives: CampaignCreative[];
 }
-
-export type CampaignStatus = 'active' | 'planned' | 'completed' | 'paused';
 
 export interface CampaignMetrics {
   impressions: number;
@@ -91,72 +77,61 @@ export interface CampaignMetrics {
   roi: number;
 }
 
+export interface CampaignAudience {
+  demographics: string;
+  interests: string;
+  locations: string;
+}
+
+export interface CampaignCreative {
+  id: string;
+  type: 'image' | 'video' | 'text';
+  name: string;
+  performance: string;
+  downloadPath: string;
+}
+
 export interface ContentCreator {
   id: string;
+  projectId: string;
   name: string;
   handle: string;
   platforms: string[];
-  audience_size: number;
-  engagement_rate: number;
-  audience_demographics: {
+  audienceSize: number;
+  engagementRate: number;
+  audienceDemographics: {
     age: string;
     gender: string;
     interests: string;
     location: string;
   };
-  past_campaigns: Array<{
+  pastCampaigns: {
     campaign: string;
     performance: string;
-    content_type: string;
+    contentType: string;
     dates: string;
-  }>;
-  status: 'active' | 'potential' | 'past';
-  notes?: string;
+  }[];
+  status: 'active' | 'potential' | 'inactive';
+  notes: string;
 }
 
-// Calendar types
+// Calendar related types
 export interface CalendarEvent {
   id: string;
+  projectId: string;
   title: string;
   date: string;
-  type: EventType;
+  type: 'event' | 'deadline' | 'task';
   description: string;
-  related_to?: string;
-  status?: string;
+  status?: 'pending' | 'completed';
 }
 
-export type EventType = 'event' | 'deadline' | 'meeting' | 'task';
-
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  due_date: string;
-  priority: 'low' | 'medium' | 'high';
-  status: 'not_started' | 'in_progress' | 'completed';
-  assigned_to?: string;
-  related_to?: string;
-}
-
-// Technical types
+// Technical related types
 export interface Repository {
   name: string;
   description: string;
   language: string;
-  updated_at: string;
-  url?: string;
-}
-
-export interface Component {
-  name: string;
-  path: string;
-  type: 'page' | 'component';
-  description?: string;
-}
-
-// API response types
-export interface ApiResponse<T> {
-  status: string;
-  data: T;
-  message?: string;
+  updatedAt: string;
+  url: string;
+  projectId: string;
 }
