@@ -1,15 +1,16 @@
 # Fast-Agent Business Workflow System
 
-A comprehensive business workflow system using fast-agent MCP for document generation, UI management, business processing, and GitHub repository integration.
+A comprehensive business workflow system using fast-agent MCP for document generation, UI management, business processing, marketing/advertising management, and GitHub repository integration.
 
 ## Overview
 
-This system provides an integrated solution for managing business workflows, documentation, and digital assets. It uses the fast-agent framework to create AI-driven agents that handle various aspects of business management, from onboarding to document generation to technical repository management.
+This system provides an integrated solution for managing business workflows, documentation, digital assets, and marketing campaigns. It uses the fast-agent framework to create AI-driven agents that handle various aspects of business management, from onboarding to document generation to social media content creation.
 
 ### Key Features
 
 - **Business Onboarding**: Guided process to collect company information, business plans, and digital assets
 - **Document Management**: Generate, store, and manage business documents with automatic PDF conversion
+- **Marketing & Advertising**: Manage social media content, advertising campaigns, and content creator partnerships
 - **Calendar Management**: Track business license renewals, events, and tasks with reminders
 - **Technical UI Management**: Analyze, generate, and deploy UI components to GitHub repositories
 - **State Management**: Track which data fields are finalized vs. work-in-progress
@@ -72,6 +73,7 @@ fast-agent-business-workflow/
 │   ├── business_agents.py   # Business and onboarding agents
 │   ├── calendar_agents.py   # Calendar and task management agents
 │   ├── document_agents.py   # Document generation and PDF conversion
+│   ├── marketing_agents.py  # Social media and marketing agents
 │   └── ui_agents.py         # UI component generation and styling
 ├── servers/                 # MCP server implementations
 │   ├── filesystem_server.py # Local file storage server
@@ -85,6 +87,7 @@ fast-agent-business-workflow/
 ├── workflows/               # Workflow definitions
 │   ├── onboarding.py        # Business onboarding workflows
 │   ├── document_management.py # Document generation workflows
+│   ├── marketing_management.py # Marketing campaign workflows
 │   ├── ui_management.py     # UI component workflows
 │   └── calendar_management.py # Calendar and task workflows
 ├── main.py                  # FastAPI application entry point
@@ -111,6 +114,15 @@ fast-agent-business-workflow/
 4. Download any document as PDF with the download button
 5. All documents are saved locally in `[BUSINESS_WORKFLOW_DIR]/data/documents/`
 
+### Marketing & Advertising
+
+1. Navigate to the Marketing tab
+2. Access social media guidelines and templates for different platforms
+3. Track advertising campaign performance and ROI
+4. Manage content creator partnerships and metrics
+5. Generate social media content based on brand guidelines
+6. Download marketing templates and campaign assets
+
 ### Calendar Management
 
 1. Navigate to the Calendar tab
@@ -135,6 +147,10 @@ fast-agent-business-workflow/
 - **Data Manager**: Tracks which data fields are finalized vs. works-in-progress
 - **Document Generator**: Creates business documentation
 - **PDF Creator**: Converts documents to properly formatted PDFs
+- **Social Media Manager**: Manages social media guidelines and templates
+- **Campaign Tracker**: Tracks advertising campaign performance
+- **Content Creator Manager**: Manages relationships with influencers
+- **Brand Guidelines Keeper**: Maintains brand consistency
 - **UI Generator**: Creates UI components based on business styling
 - **Calendar Manager**: Tracks important dates and deadlines
 - **Task Tracker**: Monitors progress toward business goals
@@ -160,6 +176,10 @@ TechShit/businesses/
 │   │   ├── business_plan/  # Business plans
 │   │   ├── license/        # Business licenses
 │   │   └── [other types]/  # Other document types
+│   ├── marketing/          # Marketing assets
+│   │   ├── campaigns/      # Campaign creatives
+│   │   ├── templates/      # Social media templates
+│   │   └── analytics/      # Marketing analytics data
 │   ├── calendar/           # Calendar events and tasks
 │   ├── ui_assets/          # UI components and assets
 │   └── downloads/          # Files prepared for download
@@ -169,7 +189,7 @@ You can access all generated content directly from this location or download it 
 
 ## Vector Database Integration
 
-The system uses a vector database to store business information for AI reference. This allows the agents to efficiently retrieve and utilize business data when generating documents or UI components.
+The system uses a vector database to store business information for AI reference. This allows the agents to efficiently retrieve and utilize business data when generating documents, marketing content, or UI components.
 
 To configure your vector database:
 
@@ -237,6 +257,12 @@ async def my_endpoint(data: dict):
 - Verify the Document Generator agent is correctly configured
 - Check that the filesystem server is properly saving files
 - Ensure the vector database connection is working
+
+### Marketing Content Generation Issues
+
+- Verify the Social Media Manager agent is correctly configured
+- Check that your brand guidelines have been properly set up
+- Ensure templates are accessible in the filesystem
 
 ### UI Generation Issues
 
