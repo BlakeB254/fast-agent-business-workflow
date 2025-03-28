@@ -1,0 +1,19 @@
+mcp:
+  servers:
+    filesystem:
+      command: "uv"
+      args: ["run", "servers/filesystem_server.py"]
+    vector_db:
+      command: "uv"
+      args: ["run", "servers/vector_db_server.py"]
+    github:
+      command: "uv"
+      args: ["run", "servers/github_server.py"]
+    pdf_generator:
+      command: "uv"
+      args: ["run", "servers/pdf_generator_server.py"]
+      
+  # Default LLM configuration
+  default:
+    model: "claude-3.7-sonnet-20250219"
+    client: "anthropic"
